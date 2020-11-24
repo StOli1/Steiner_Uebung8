@@ -16,12 +16,12 @@ public class CurrencyConverter {
     }
 
     public double euroToCurrencies(double euro, Object name){
-        Currency cu = null;
-        for (int i = 0; i < currencyList.size(); i++){
-            if(currencyList.get(i).getName().equals(name)){
-                cu = currencyList.get(i);
+        double index = 1;
+        for (Currency currency : currencyList){
+            if(currency.getName().equals(name)){
+                index = currency.getValue();
             }
         }
-        return euro* cu.getValue();
+        return euro * index;
     }
 }
